@@ -1,0 +1,1 @@
+# SigmaOS-tools-speedtest\n\nSigmaOS speedtest - Network bandwidth and latency analyzer\n

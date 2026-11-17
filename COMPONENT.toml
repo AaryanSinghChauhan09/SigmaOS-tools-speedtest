@@ -3,7 +3,7 @@ name = "SigmaOS-tools-speedtest"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "tools-speedtest component"
+description = "SigmaOS Tools speedtest - Network speed test client (omacom/omarchy-speedtest parity)"
 upstream = []
 
 [contract]

@@ -1,3 +1,4 @@
+#![forbid(unsafe_code)]
 //! speedtest - Network speed and latency test client for SigmaOS
 
 #[derive(Debug, Clone)]
@@ -56,5 +57,38 @@ impl SpeedTestEngine {
 impl Default for SpeedTestEngine {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+
+#[cfg(test)]
+mod speedtest_extra_tests {
+    use super::*;
+
+    #[test]
+    fn test_speedtest_zero_duration_returns_zero_mbps_aaa() {
+        // Arrange
+        let sample = SpeedSample::new(1000, 0);
+        // Act
+        let mbps = sample.mbps();
+        // Assert
+        assert_eq!(mbps, 0.0);
+    }
+
+    #[test]
+    fn test_speedtest_empty_engine_averages_aaa() {
+        // Arrange
+        let engine = SpeedTestEngine::new();
+        // Act & Assert
+        assert_eq!(engine.average_mbps(), 0.0);
+        assert_eq!(engine.peak_mbps(), 0.0);
+    }
+
+    #[test]
+    fn test_speedtest_engine_default_aaa() {
+        // Arrange & Act
+        let engine = SpeedTestEngine::default();
+        // Assert
+        assert_eq!(engine.average_mbps(), 0.0);
     }
 }

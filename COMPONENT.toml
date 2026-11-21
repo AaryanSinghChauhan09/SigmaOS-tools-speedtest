@@ -1,16 +1,16 @@
 [component]
 name = "SigmaOS-tools-speedtest"
 tier = 2
-stability = "scaffold"
+stability = "beta"
 language = "rust"
 description = "SigmaOS Tools speedtest - Network speed test client (omacom/omarchy-speedtest parity)"
-upstream = []
+upstream = ["https://github.com/omacom/omarchy-speedtest"]
 
 [contract]
-provides = ["component"]
+provides = ["latency-stats", "throughput-calc", "result-report"]
 depends_on = []
 
 [maturity]
 status = "Implemented"
-test_evidence = "Compiles and passes AAA unit tests"
+test_evidence = "cargo test: 5 tests pass (ping stats, throughput, report)"
 next_milestone = "Hardware and runtime integration"

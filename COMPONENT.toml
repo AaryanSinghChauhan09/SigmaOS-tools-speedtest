@@ -12,5 +12,5 @@ depends_on = []
 
 [maturity]
 status = "Implemented"
-test_evidence = "cargo test: 5 tests pass (ping stats, throughput, report)"
+test_evidence = "cargo test: 8 tests pass (ping stats, throughput, sparkline report)"
 next_milestone = "Hardware and runtime integration"

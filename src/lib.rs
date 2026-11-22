@@ -12,8 +12,10 @@
 
 pub mod error;
 pub mod result;
+pub mod sparkline;
 pub mod test;
 
 pub use error::SpeedtestError;
 pub use result::{SpeedResult, ThroughputUnit};
 pub use test::{LatencyStats, PingSample, download_bytes, format_throughput, ping_stats, upload_bytes};
+pub use sparkline::{bar_chart, report_with_spark, sparkline};
